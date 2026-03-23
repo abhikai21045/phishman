@@ -1,0 +1,168 @@
+
+:root {
+  --primary: #dc3545;       
+  --primary-dark: #c82333;
+  --secondary: #6c757d;
+  --light: #f8f9fa;
+  --dark: #343a40;
+  --success: #28a745;
+  --warning: #ffc107;
+}
+
+body {
+  background-color: #eaeaea;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  color: #333;
+}
+
+.navbar {
+  background-color: var(--dark);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+
+.centered-element {
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+ul, ol, li {
+  list-style-type: none;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: white !important;
+}
+
+.navbar-brand::before {
+  content: "Phish";
+  color: var(--primary);
+}
+
+.container {
+  max-width: 1100px;
+}
+
+.card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  overflow: hidden;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+}
+
+.btn-danger {
+  background-color: #e74c3c;
+}
+
+.table {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.table thead {
+  background-color: var(--dark);
+  color: white;
+}
+
+.stat-badge {
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.stat-sent     { background: #e3f2fd; color: #1976d2; }
+.stat-opened   { background: #fff3cd; color: #856404; }
+.stat-clicked  { background: #f8d7da; color: #721c24; }
+.stat-submitted{ background: #d4edda; color: #155724; }
+
+.alert {
+  border-radius: 8px;
+}
+
+.form-label {
+  font-weight: 600;
+  color: #444;
+}
+
+.form-control, .form-select {
+  border-radius: 8px;
+  padding: 10px 14px;
+}
+/* phishing/success.css or inline */
+.success-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #343a40 0%, #1d2124 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.success-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(220, 53, 69, 0.3);
+  border-radius: 16px;
+  padding: 3rem 2.5rem;
+  max-width: 520px;
+  text-align: center;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+
+.success-icon {
+  font-size: 5.5rem;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+.success-title {
+  color: white;
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+}
+
+.success-text {
+  color: #ddd;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.disclaimer-box {
+  background: rgba(220, 53, 69, 0.15);
+  border-left: 5px solid var(--primary);
+  padding: 1.2rem;
+  border-radius: 8px;
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  color: #ffcccc;
+}

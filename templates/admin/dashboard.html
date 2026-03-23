@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - PhishMan{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">PhishMan Dashboard </h2>
+
+<div class="row g-4">
+  {% for c in campaigns %}
+  <div class="col-lg-6 col-xl-4">
+    <div class="card h-100">
+      <div class="card-body">
+        <h5 class="card-title">{{ c.title }}</h5>
+        <p class="text-muted small mb-3">
+          Created: {{ c.created_at.strftime('%Y-%m-%d %H:%M') }}
+        </p>
+
+        <div class="row text-center">
+          <div class="col-6 mb-3">
+            <div class="stat-badge stat-sent">Sent</div>
+            <h4 class="mt-2">{{ stats[c.id]['sent'] }}</h4>
+          </div>
+          
+          <div class="col-6 mb-3">
+            <div class="stat-badge stat-clicked">Clicked</div>
+            <h4 class="mt-2">{{ stats[c.id]['clicked'] }}</h4>
+          </div>
+          <div class="centered-element col-6">
+            <div class="stat-badge stat-submitted">Submitted</div>
+            <h4 class="mt-2">{{ stats[c.id]['submitted'] }}</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% else %}
+  <div class="col-12">
+    <div class="alert alert-info text-center py-5">
+      <h4>No campaigns yet</h4>
+      <p>Create your first phishing simulation campaign to start tracking.</p>
+      <a href="{{ url_for('create_campaign') }}" class="btn btn-primary mt-3">Create Campaign</a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

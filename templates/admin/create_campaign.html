@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+  <h2>Create New Campaign</h2>
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for category, message in messages %}
+        <div class="alert alert-{{ category }}">{{ message }}</div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+
+  <form method="POST">
+    <div class="mb-3">
+      <label class="form-label">Campaign Title</label>
+      <input type="text" name="title" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Target Emails (one per line or comma separated)</label>
+      <textarea name="emails" rows="8" class="form-control" required></textarea>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Template</label>
+      <select name="template" class="form-select">
+        <option value="outlook">Outlook / Microsoft</option>
+       
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-danger">Create & Send Emails</button>
+  </form>
+</div>
+{% endblock %}   
